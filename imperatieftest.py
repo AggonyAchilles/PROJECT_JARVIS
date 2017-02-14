@@ -133,5 +133,7 @@ def jarvisController():
     while (string == ""):
         string = input("How can I be of service?: ")
 
+    print(string)
+
 
 main()
