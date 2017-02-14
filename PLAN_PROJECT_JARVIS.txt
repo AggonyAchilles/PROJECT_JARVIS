@@ -1,0 +1,20 @@
+PLAN_PROJECT_JARVIS
+-------------------
+
+HOW DOES JARVIS WORK?
+---------------------
+
+INPUT (JARVIS' EARS) - CONTROLLER/MANAGEMENT (JARVIS' BRAIN) - OUTPUT (JARVIS' MOUTH)
+
+INPUT (JARVIS' EARS)
+---------------------
+
+Jarvis should be able to accept commands trough:
+
+* Text-input
+* Speech
+
+
+
+
+

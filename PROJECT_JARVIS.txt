@@ -1,0 +1,13 @@
+PROJECT_JARVIS
+--------------
+JARVIS is a personal assistent written in C++
+
+JARVIS is a program that can:
+* Open programs
+* Open Files
+* Close Files
+* Close programs
+* Search on the web
+* Play music
+* .... That's all for now
+--------------------------------------------------
