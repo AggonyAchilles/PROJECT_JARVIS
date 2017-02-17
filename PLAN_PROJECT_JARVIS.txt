@@ -16,5 +16,11 @@ Jarvis should be able to accept commands trough:
 
 
 
+Additions
+---------
+
+JARVIS should be able to recall what he googled before to make any suggestions. -> list?
+
+
 
 
