@@ -1,5 +1,6 @@
 import datetime
 import webbrowser
+import subprocess
 
 class Jarvis():
 	#Boots Jarvis
@@ -75,12 +76,71 @@ class Jarvis():
 	#Control center, here is where the magick happens. JARVIS asks for input and manages it
 	def jarvisControlCenter(self):
 
-		string = "fries"
+		self.options()
+		chosenOption = (input("Option (number): "))
 		#webbrowser.open('https://www.google.be/?gfe_rd=cr&ei=U1-jWNauLYHEXsK_nJAH&gws_rd=ssl#q='+string)	Open a browser
-		string = input("How can I be of your service: ")
+		while (self.optionIsValid(chosenOption) == False):
+			print("That is not possible Ian")
+			chosenOption = int(input("Option (number): "))
+
+		self.optionsController(chosenOption)
+
+	#Displays the several options JARVIS can do
+	def options(self):
+		print("Would you like me to:")
+		print("(1) Google something")
+		print("(2) Open a website")
+		#To be added
+
+	#Opens Google
+	def googleSomething(self):
+
+		query = self.queryParser()
+		webbrowser.open('http://www.google.be/?gfe_rd=cr&ei=U1-jWNauLYHEXsK_nJAH&gws_rd=ssl#q='+query)
+
+	#Changes all the spaces into
+	def queryParser(self):
+
+		query = input("What would you like me to google: ")
+
+		newQuery = ""
+
+		for i in range(len(query)):
+			if (query[i] == ' '):
+				newQuery += '+'
+			else:
+				newQuery += query[i]
+
+		return newQuery
+
+
+	#Controls and calls the correct functions
+	def optionsController(self, option):
+
+		if (option == '1'):
+			self.googleSomething()
+			self.jarvisControlCenter()
+
+		#elif (option == '2'):
+		#	self.openWebsite()
+		#	self.jarvisControlCenter()
+
+		else:
+			self.jarvisControlCenter()
+
+	#Checks wether an option is valid or not
+	def optionIsValid(self, option):
+
+		optionList = ['1', '2']
+
+		if option in optionList:
+			return True
+
+		else:
+			return False
 	
 
-		print(string)
+		
 
 	       
 
