@@ -92,13 +92,29 @@ class Jarvis():
 		print("(2) Open a website")
 		#To be added
 
+	#Acceps an url or a term and opens the website
+	def openWebsite(self):
+
+		websiteQuery = input("Enter a specific url or name the website: ")
+
+		if (websiteQuery[0:3] == "www"):
+			webbrowser.open('http://' + websiteQuery)
+			
+
+		elif (websiteQuery[0:7] == "http://"):
+			webbrowser.open(websiteQuery)
+			
+
+		else:
+			webbrowser.open('http://www.' + websiteQuery + '.com')
+			
 	#Opens Google
 	def googleSomething(self):
 
 		query = self.queryParser()
 		webbrowser.open('http://www.google.be/?gfe_rd=cr&ei=U1-jWNauLYHEXsK_nJAH&gws_rd=ssl#q='+query)
 
-	#Changes all the spaces into
+	#Accepts input and changes all the spaces into '+'
 	def queryParser(self):
 
 		query = input("What would you like me to google: ")
@@ -121,12 +137,13 @@ class Jarvis():
 			self.googleSomething()
 			self.jarvisControlCenter()
 
-		#elif (option == '2'):
-		#	self.openWebsite()
-		#	self.jarvisControlCenter()
+		elif (option == '2'):
+			self.openWebsite()
+			self.jarvisControlCenter()
 
 		else:
-			self.jarvisControlCenter()
+			print("Exiting ....")
+			exit()
 
 	#Checks wether an option is valid or not
 	def optionIsValid(self, option):
@@ -138,11 +155,7 @@ class Jarvis():
 
 		else:
 			return False
-	
 
-		
-
-	       
 
 jarvis = Jarvis()
 
