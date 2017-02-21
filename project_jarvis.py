@@ -1,6 +1,8 @@
-import datetime
-import webbrowser
-import subprocess
+import datetime       #Times, dates, etc
+import webbrowser     #Webstuff
+import urllib.request #Checking internetconnection etc
+import os
+
 
 class Jarvis():
 	#Boots Jarvis
@@ -90,6 +92,7 @@ class Jarvis():
 		print("Would you like me to:")
 		print("(1) Google something")
 		print("(2) Open a website")
+		print("(3) Play music")
 		#To be added
 
 	#Acceps an url or a term and opens the website
@@ -141,6 +144,10 @@ class Jarvis():
 			self.openWebsite()
 			self.jarvisControlCenter()
 
+		elif (option == '3'):
+			self.playMusic()
+			self.jarvisControlCenter()
+
 		else:
 			print("Exiting ....")
 			exit()
@@ -148,13 +155,28 @@ class Jarvis():
 	#Checks wether an option is valid or not
 	def optionIsValid(self, option):
 
-		optionList = ['1', '2']
+		optionList = ['1', '2', '3']
 
 		if option in optionList:
 			return True
 
 		else:
 			return False
+
+	#Controls wether JARVIS has an active internet connection
+	def internet_on(self):
+		try:
+			urllib.request.urlopen('http://www.google.com', timeout=1)
+			return True
+		except urllib.request.URLError as err:
+			return False
+
+	def playMusic(self):
+		if (self.internet_on()):
+			webbrowser.open('https://www.youtube.com/watch?v=U9FzgsF2T-s&list=PL4UGiGyQzjtnA6M-GflE4RUQm5wrCv8HZ')
+
+		else:
+			os.startfile('C:/Users/Ian/Desktop/Development/PROJECT_JARVIS/music/Ghost-Elizabeth.mp3')
 
 
 jarvis = Jarvis()
