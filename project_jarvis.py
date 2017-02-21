@@ -210,7 +210,7 @@ class Jarvis():
 		#Add more radios
 
 		else:
-			print("I couldn't active the radio, but I shall search it on google for you instead.")
+			print("I couldn't find the radio in my database, but I can search for it on google for you instead.")
 			webbrowser.open('http://www.google.be/?gfe_rd=cr&ei=U1-jWNauLYHEXsK_nJAH&gws_rd=ssl#q=' + radio)
 
 	#Hulpfunction activateTheCorrectRadio(self, radio) for Studio Brussel
