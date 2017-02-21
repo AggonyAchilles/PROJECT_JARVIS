@@ -149,13 +149,13 @@ class Jarvis():
 			self.jarvisControlCenter()
 
 		else:
-			print("Exiting ....")
+			print("JARVIS is shutting down ....")
 			exit()
 
 	#Checks wether an option is valid or not
 	def optionIsValid(self, option):
 
-		optionList = ['1', '2', '3']
+		optionList = ['0', '1', '2', '3']
 
 		if option in optionList:
 			return True
@@ -171,6 +171,7 @@ class Jarvis():
 		except urllib.request.URLError as err:
 			return False
 
+	#Function that plays the music when asked for
 	def playMusic(self):
 		if (self.internet_on()):
 			webbrowser.open('https://www.youtube.com/watch?v=U9FzgsF2T-s&list=PL4UGiGyQzjtnA6M-GflE4RUQm5wrCv8HZ')
@@ -180,5 +181,3 @@ class Jarvis():
 
 
 jarvis = Jarvis()
-
-
