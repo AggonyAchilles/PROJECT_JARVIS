@@ -92,6 +92,7 @@ class Jarvis():
 		print("Would you like me to:")
 		print("(1) Google something")
 		print("(2) Open a website")
+
 		print("(3) Play music")
 		print("(4) Put on the radio")
 		#To be added
