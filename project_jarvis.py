@@ -93,6 +93,7 @@ class Jarvis():
 		print("(1) Google something")
 		print("(2) Open a website")
 		print("(3) Play music")
+		print("(4) Put on the radio")
 		#To be added
 
 	#Acceps an url or a term and opens the website
@@ -148,6 +149,10 @@ class Jarvis():
 			self.playMusic()
 			self.jarvisControlCenter()
 
+		elif (option == '4'):
+			self.putOnTheRadio()
+			self.jarvisControlCenter()
+
 		else:
 			print("JARVIS is shutting down ....")
 			exit()
@@ -155,7 +160,7 @@ class Jarvis():
 	#Checks wether an option is valid or not
 	def optionIsValid(self, option):
 
-		optionList = ['0', '1', '2', '3']
+		optionList = ['0', '1', '2', '3', '4']
 
 		if option in optionList:
 			return True
@@ -178,6 +183,75 @@ class Jarvis():
 
 		else:
 			os.startfile('C:/Users/Ian/Desktop/Development/PROJECT_JARVIS/music/Ghost-Elizabeth.mp3')
+
+	def putOnTheRadio(self):
+		if (self.internet_on()):
+			radio = input("Wich radio would you like to listen to: ")
+			self.activateTheCorrectRadio(radio)
+
+
+		else:
+			print("There is no active internet connection, therefore I cannot put on the radio.")
+
+	#Function that sorts out wich radio should be put on
+	def activateTheCorrectRadio(self, radio):
+		if (self.radioStuBru(radio)):
+			webbrowser.open('http://radioplus.be/#/stubru/herbeluister')
+
+		elif (self.radioQMu(radio)):
+			webbrowser.open('http://qmusic.be/')
+
+		elif (self.radioJoe(radio)):
+			webbrowser.open('http://joe.be/live/joe')
+
+		elif (self.radioNostalgie(radio)):
+			webbrowser.open('http://www.radioviainternet.be/radio-nostalgie')
+
+		#Add more radios
+
+		else:
+			print("I couldn't active the radio, but I shall search it on google for you instead.")
+			webbrowser.open('http://www.google.be/?gfe_rd=cr&ei=U1-jWNauLYHEXsK_nJAH&gws_rd=ssl#q=' + radio)
+
+	#Hulpfunction activateTheCorrectRadio(self, radio) for Studio Brussel
+	def radioStuBru(self, radio):
+		stuBruList = ["Studio Brussel", "Stu Bru", "stu bru", "stubru", "StuBru", "Stubru", "stuBru", "studio brussel", "Studio brussel", "STUDIOBRUSSEL", "STUDIO BRUSSEL"]
+		
+		if radio in stuBruList:
+			return True
+
+		else:
+			return False
+
+	#Hulpfunction activateTheCorrectRadio(self, radio) for Q-Music
+	def radioQMu(self, radio):
+		qMuList = ["QMusic", "Q-music", "Qmusic", "qmusic", "qMusic", "q-music", "q-Music", "QMUSIC"]
+
+		if radio in qMuList:
+			return True
+
+		else:
+			return False
+
+	#Fulpfunction activateTheCorrectRadio(self, radio) for Joe FM
+	def radioJoe(self, radio):
+		joeList = ["Joe", "joe", "JOEFM", "JoeFm", "joefm", "JoeFM", "joe fm", "joe-fm", "Joe FM", "Joe-FM"]
+
+		if radio in joeList:
+			return True
+
+		else:
+			return False
+
+	#HulpFunction activateTheCorrectRadio(self, radio) for Nostalgie
+	def radioNostalgie(self, radio):
+		nostalgieList = ["Nostalgie", "nostalgie"]
+
+		if radio in nostalgieList:
+			return True
+
+		else:
+			return False
 
 
 jarvis = Jarvis()
