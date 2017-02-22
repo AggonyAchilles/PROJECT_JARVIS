@@ -92,9 +92,11 @@ class Jarvis():
 		print("Would you like me to:")
 		print("(1) Google something")
 		print("(2) Open a website")
-
 		print("(3) Play music")
 		print("(4) Put on the radio")
+		print("(5) Give the time")
+		print("(6) Give the date")
+		print("(7) Give the date and time")
 		#To be added
 
 	#Acceps an url or a term and opens the website
@@ -154,14 +156,38 @@ class Jarvis():
 			self.putOnTheRadio()
 			self.jarvisControlCenter()
 
+		elif (option == '5'):
+			self.giveTime()
+			self.jarvisControlCenter()
+
+		elif (option == '6'):
+			self.giveDate()
+			self.jarvisControlCenter()
+
+		elif (option == '7'):
+		#Gives the time and date + weekday
+			self.dateAndTimeConfiguration()
+			self.presentDateAndTime(self.weekday, self.day, self.month, self.year, self.time, self.hour, self.partOfTheDay)
+			self.jarvisControlCenter()
+
 		else:
 			print("JARVIS is shutting down ....")
 			exit()
 
+	#Gives the date
+	def giveDate(self):
+		self.dateAndTimeConfiguration()
+		print("Today it is", self.weekday, self.month, self.day, self.year)
+
+	#Gives the time
+	def giveTime(self):
+		self.dateAndTimeConfiguration()
+		print("Right now the time is:", self.time)
+
 	#Checks wether an option is valid or not
 	def optionIsValid(self, option):
 
-		optionList = ['0', '1', '2', '3', '4']
+		optionList = ['0', '1', '2', '3', '4', '5', '6', '7']
 
 		if option in optionList:
 			return True
