@@ -14,12 +14,14 @@ Jarvis should be able to accept commands trough:
 * Text-input
 * Speech
 
-
-
 Additions
 ---------
 
 JARVIS should be able to recall what he googled before to make any suggestions. -> list?
+
+JARVIS_GUI -> Rework the whole code structure from scratch
+			  Copy pasting functions possible
+			  Lay-out GUI? -> Sketching
 
 
 

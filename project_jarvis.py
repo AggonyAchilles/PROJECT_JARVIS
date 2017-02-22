@@ -137,7 +137,7 @@ class Jarvis():
 		return newQuery
 
 
-	#Controls and calls the correct functions
+	#Controls and calls the correct functions, ends with rerouting to JARVISCONTROLCENTER
 	def optionsController(self, option):
 
 		if (option == '1'):
