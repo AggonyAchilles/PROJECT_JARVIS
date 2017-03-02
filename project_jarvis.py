@@ -119,7 +119,7 @@ class Jarvis():
 	def googleSomething(self):
 
 		query = self.queryParser()
-		webbrowser.open('http://www.google.be/?gfe_rd=cr&ei=U1-jWNauLYHEXsK_nJAH&gws_rd=ssl#q='+query)
+		webbrowser.open('http://www.google.be/?gfe_rd=cr&ei=U1-jWNauLYHEXsK_nJAH&gws_rd=ssl#q=' + query)
 
 	#Accepts input and changes all the spaces into '+'
 	def queryParser(self):

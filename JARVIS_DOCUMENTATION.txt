@@ -1,0 +1,17 @@
+JARVIS DOCUMENTATION
+
+*** Imports ***
+----------------
+
+JARVIS requires some libraries in order to operate on WINDOWS:
+
+- tkinter
+- tkinter.messagebox
+- os
+- time
+- datetime
+- urllib.request
+- webbrowser
+
+Eventough some if not all of the libraries are part of python, it is still a good practice to check wether they have been succesfully imported or not. If one library fails to get imported the program will shut down
+
